@@ -1,33 +1,10 @@
-/**
- * @author yann
- *
- */
 public class Hero {
-    String name; //姓名
+     //使用完整单词命名，易于理解
+    String Ôname;
       
-    float hp; //血量
+    float hp;
       
-    float armor; //护甲
+    float armor;
       
-    int moveSpeed; //移动速度
- 
-    //坑队友
-    void keng(){
-        System.out.println("坑队友！");
-    }
- 
-    //获取护甲值
-    /**
-     * @return armor
-     */
-    float getArmor(){
-        return armor;
-    }
-     
-    //增加移动速度
-    void addSpeed(int speed){
-        //在原来的基础上增加移动速度
-        moveSpeed = moveSpeed + speed;
-    }
-     
+    int moveSpeed;
 }
