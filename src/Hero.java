@@ -11,11 +11,17 @@ public class Hero {
       
     int moveSpeed; //移动速度
  
-    //坑队友
+    //获取护甲值
     /**
-     * keng k
+     * @return armor
      */
+    float getArmor(){
+        return armor;
+    }
+ 
+    //坑队友
     void keng(){
         System.out.println("坑队友！");
     }
+ 
 }
