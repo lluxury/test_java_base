@@ -3,12 +3,14 @@
  *
  */
 public class HelloWorld{
-    
+     
   public static void main(String[] args){
-      char c = '中';
-      //char 只能存放一个字符，超过一个字符就会产生编译错误
-//      char c2 = '中国'; //报错
-//      char c3 = 'ab'; //报错
- 
+      double d = 123.45;
+        
+      //该行会出现编译错误，因为54.321是double型的
+//      float f = 54.321;
+        
+      float f2 = 54.321f;
+        
   }
 }
