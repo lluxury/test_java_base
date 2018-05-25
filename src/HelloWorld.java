@@ -1,10 +1,8 @@
 public class HelloWorld {
     public static void main(String[] args) {
- 
-        int a = 5;
-        long b = 6;
-        int c = (int) (a+b); //a+b的运算结果是long型，所以要进行强制转换
-        long d = a+b;
-         
+        byte a = 1;
+        byte b= 2;
+        byte c = (byte) (a+b); //虽然a b都是byte类型，但是运算结果是int类型，需要进行强制转换
+        int d = a+b;
     }
 }
