@@ -5,12 +5,10 @@
 public class HelloWorld{
     
   public static void main(String[] args){
-      byte b = 1;
-      short s = 200;
-      int i = 300;
-      long l = 400;
+      char c = '中';
+      //char 只能存放一个字符，超过一个字符就会产生编译错误
+//      char c2 = '中国'; //报错
+//      char c3 = 'ab'; //报错
  
-      /*如果试图给byte类型的变量赋予超出其范围的值，就会产生编译错误*/
-      byte b2 = 200;
   }
 }
