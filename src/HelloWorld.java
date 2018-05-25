@@ -1,9 +1,10 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        boolean b = true;
+        boolean a = true;
+        boolean b = false;
          
-        System.out.println(b); //输出true
-        System.out.println(!b);//输出false
-         
+        System.out.println(a^b); //不同返回真
+        System.out.println(a^!b); //相同返回假
+ 
     }
 }
