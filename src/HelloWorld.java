@@ -1,10 +1,10 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        int i = 10;
-        int j = 5;
-        int a = i+j;
-        int b = i - j;
-        int c = i*j;
-        int d = i /j;
+ 
+        int a = 5;
+        long b = 6;
+        int c = (int) (a+b); //a+b的运算结果是long型，所以要进行强制转换
+        long d = a+b;
+         
     }
 }
