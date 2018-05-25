@@ -3,17 +3,15 @@
  *
  */
 public class HelloWorld {
- 
+  
     public static void main(String[] args) {
- 
-        char c = 'A';
-        short s = 80;
+  
+        long l = 50;
+        int i = 50;
          
-        //虽然short和char都是16位的，长度是一样的
-        //但是彼此之间，依然需要进行强制转换
-        c = (char) s;
-        //直接进行转换，会出现编译错误
-//        s = c;
-         
+        //int比较小，要放进比较大的long,随便怎么样，都放的进去
+        l = i;
+        System.out.println(i);
+          
     }
 }
