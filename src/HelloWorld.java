@@ -1,5 +1,10 @@
-public class HelloWorld { //类对应的块
-    public static void main(String[] args) { //主方法对应的块
-        System.out.println("abc");
+public class HelloWorld {
+    public static void main(String[] args) {
+        int i = 10;
+        int j = 5;
+        int a = i+j;
+        int b = i - j;
+        int c = i*j;
+        int d = i /j;
     }
 }
