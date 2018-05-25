@@ -8,7 +8,7 @@ public class HelloWorld {
          
         System.out.println(Integer.toBinaryString(j)); //6的二进制是110
          
-        System.out.println(i|j); //所以 5|6 对每一位进行或运算，得到 111->7
+        System.out.println(i&j); //所以 5&6 对每一位进行与运算，得到 100->4
  
     }
 }
