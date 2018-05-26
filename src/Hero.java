@@ -1,10 +1,20 @@
 public class Hero {
-     //使用完整单词命名，易于理解
-    String Ôname;
       
-    float hp;
+    String name; //姓名
       
-    float armor;
+    float hp; //血量
       
-    int moveSpeed;
+    float armor; //护甲
+      
+    int moveSpeed; //移动速度
+      
+    public static void main(String[] args) {
+        //创建一个对象
+        new Hero();
+         
+        //使用一个引用来指向这个对象
+        Hero h = new Hero();
+        Hero hero_xx = new Hero(); 
+    }  
+      
 }
