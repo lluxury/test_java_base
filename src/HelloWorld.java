@@ -1,48 +1,16 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        int a[] = new int[5];
-        // 使用随机数填充
-        for (int i = 0; i < a.length; i++)
-            a[i] = (int) (Math.random() * 100);
-  
-        // 排序前，先把内容打印出来
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
+        int values [] = new int[]{18,62,68,82,65,9};
+        //常规遍历
+        for (int i = 0; i < values.length; i++) {
+            int each = values[i];
+            System.out.println(each);
         }
-        System.out.println(" ");
-        // 选择法正排序
-        for (int j = 0; j < a.length - 1; j++) {
-            for (int i = j + 1; i < a.length; i++) {
-                if (a[i] < a[j]) {
-                    int temp = a[j];
-                    a[j] = a[i];
-                    a[i] = temp;
-                }
-            }
+         
+        //增强型for循环遍历
+        for (int each : values) {
+            System.out.println(each);
         }
-  
-        // 把内容打印出来
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-        System.out.println();
-  
-        // 冒泡法倒排序
-  
-        for (int j = 0; j < a.length; j++) {
-            for (int i = 0; i < a.length - j - 1; i++) {
-                if (a[i] < a[i + 1]) {
-                    int temp = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = temp;
-                }
-            }
-        }
-        // 把内容打印出来
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-  
-        System.out.println(" ");
+         
     }
 }
