@@ -1,26 +1,52 @@
 public class HelloWorld {
     public static void main(String[] args) {
- 
-        //如果只使用 if,会执行4次判断
-        int i = 2;
-        if (i==1)
-            System.out.println(1);
-        if (i==2)
-            System.out.println(2);
-        if (i==3)
-            System.out.println(3);
-        if (i==4)
-            System.out.println(4);
          
-        //如果使用else if, 一旦在18行，判断成立， 20行和22行的判断就不会执行了，节约了运算资源
-        if (i==1)
-            System.out.println(1);
-        else if (i==2)
-            System.out.println(2);
-        else if (i==3)
-            System.out.println(3);
-        else if (i==4)
-            System.out.println(4);     
+        //如果使用if else
+        int day = 5;
+        if (day==1)
+            System.out.println("星期一");
+              
+        else if (day==2)
+            System.out.println("星期二");
+        else if (day==3)
+            System.out.println("星期三");
+        else if (day==4)
+            System.out.println("星期四");
+        else if (day==5)
+            System.out.println("星期五");
+        else if (day==6)
+            System.out.println("星期六");
+        else if (day==7)
+            System.out.println("星期天");
+        else
+            System.out.println("这个是什么鬼？");
+         
+        //如果使用switch
+        switch(day){
+            case 1:
+                System.out.println("星期一");
+                break;
+            case 2:
+                System.out.println("星期二");
+                break;
+            case 3:
+                System.out.println("星期三");
+                break;
+            case 4:
+                System.out.println("星期四");
+                break;
+            case 5:
+                System.out.println("星期五");
+                break;
+            case 6:
+                System.out.println("星期六");
+                break;
+            case 7:
+                System.out.println("星期天");
+                break;
+            default:
+                System.out.println("这个是什么鬼？");
+        }
          
     }
 }
