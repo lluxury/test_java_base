@@ -1,22 +1,12 @@
 public class HelloWorld {
     public static void main(String[] args) {
-           
-        //使用while打印0到4    
-        int i = 0;
-        while(i<5){
-            System.out.println("while循环输出的"+i);
-            i++;
-        }
           
-        //使用for打印0到4    
-        for (int j = 0; j < 5; j++) {
-            System.out.println("for  循环输出的"+j);
-        }
-        int xx = 5;
-        int xxx = 0;
-        for (int k=0; k<xx; k++){
-        	System.out.println("for  循环输出的"+k);
-      
+        //打印单数    
+        for (int j = 0; j < 10; j++) {
+            if(0==j%2) 
+                continue; //如果是双数，后面的代码不执行，直接进行下一次循环
+             
+            System.out.println(j);
         }
     }
 }
