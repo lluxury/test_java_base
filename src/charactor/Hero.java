@@ -1,23 +1,23 @@
 package charactor;
-  
+   
 public class Hero {
     public String name;
     protected float hp;
-      
+ 
     public static void main(String[] args) {
-        ADHero ad = new ADHero();
-        APHero ap = new APHero();
          
-        Hero h1= ad;
-        Hero h2= ap;
+        int i = 5;
+        int j = 6;
+        int k = i+j; //如果+号两侧都是整型，那么+代表 数字相加
          
-        //判断引用h1指向的对象，是否是ADHero类型
-        System.out.println(h1 instanceof ADHero);
+        System.out.println(k);
          
-        //判断引用h2指向的对象，是否是APHero类型
-        System.out.println(h2 instanceof APHero);
+        int a = 5;
+        String b = "5";
          
-        //判断引用h1指向的对象，是否是Hero的子类型
-        System.out.println(h1 instanceof Hero);
+        String c = a+b; //如果+号两侧，任意一个是字符串，那么+代表字符串连接
+        System.out.println(c);
+         
     }
+       
 }
