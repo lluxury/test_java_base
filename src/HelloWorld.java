@@ -1,17 +1,17 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        Season season = Season.SPRING;
+        int season = 5;
         switch (season) {
-        case SPRING:
+        case 1:
             System.out.println("春天");
             break;
-        case SUMMER:
+        case 2:
             System.out.println("夏天");
             break;
-        case AUTUMN:
+        case 3:
             System.out.println("秋天");
             break;
-        case WINTER:
+        case 4:
             System.out.println("冬天");
             break;
         }
