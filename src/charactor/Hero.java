@@ -1,16 +1,16 @@
-package charactor;
- 
+package charactor; //在最开始的地方声明该类所处于的包名
 /**
  * @author yann
  *
  */
 public class Hero {
-    public String name;
-    protected float hp;
- 
-    public static void main(String[] args) {
-           Hero garen =  new Hero();
-           garen =  new Hero();
-           // 对象1，就没有任何引用指向了,就没意义了
-    }
+        
+    String name; //姓名
+        
+    float hp; //血量
+        
+    float armor; //护甲
+        
+    int moveSpeed; //移动速度
+     
 }
