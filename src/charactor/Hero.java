@@ -1,22 +1,29 @@
 package charactor;
+ 
+import property.LifePotion;
+import property.MagicPotion;
    
 public class Hero {
     public String name;
     protected float hp;
  
+    public void useLifePotion(LifePotion lp){
+        lp.effect();
+    }
+    public void useMagicPotion(MagicPotion mp){
+        mp.effect();
+    }
+//    使用血瓶和魔瓶，就需要为Hero设计两个方法
     public static void main(String[] args) {
          
-        int i = 5;
-        int j = 6;
-        int k = i+j; //如果+号两侧都是整型，那么+代表 数字相加
+        Hero garen =  new Hero();
+        garen.name = "盖伦";
+     
+        LifePotion lp =new LifePotion();
+        MagicPotion mp =new MagicPotion();
          
-        System.out.println(k);
-         
-        int a = 5;
-        String b = "5";
-         
-        String c = a+b; //如果+号两侧，任意一个是字符串，那么+代表字符串连接
-        System.out.println(c);
+        garen.useLifePotion(lp);
+        garen.useMagicPotion(mp);
          
     }
        
