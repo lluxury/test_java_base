@@ -1,12 +1,6 @@
 package property;
  
-public class LifePotion {
-    String name;
-    int price;
- 
-    public void buy(){
-        System.out.println("购买");
-    }
+public class LifePotion extends Item {
     public void effect(){
         System.out.println("血瓶使用后，可以回血");
     }
