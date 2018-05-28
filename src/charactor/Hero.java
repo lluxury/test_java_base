@@ -1,28 +1,24 @@
 package charactor;
  
-import property.Weapon;
- 
 public class Hero {
-    private int id;
- 
-    // public的属性 name
-    // 自己可以访问
- 
-    // 同包子类可以继承
-    // 不同包子类可以继承
- 
-    // 同包类可以访问
-    // 不同包类可以访问
-    public String name;
- 
+    public String name; //实例属性，对象属性，非静态属性
     protected float hp;
- 
-    float armor;
- 
-    int moveSpeed;
- 
-    public void equip(Weapon w) {
- 
+    static String copyright;//类属性,静态属性
+     
+    public static void main(String[] args) {
+           Hero garen =  new Hero();
+           garen.name = "盖伦";
+            
+           Hero.copyright = "版权由Riot Games公司所有";
+            
+           System.out.println(garen.name);
+           System.out.println(garen.copyright);
+            
+           Hero teemo =  new Hero();
+           teemo.name = "提莫";
+           System.out.println(teemo.name);    
+           System.out.println(teemo.copyright);
+         
     }
- 
+     
 }
