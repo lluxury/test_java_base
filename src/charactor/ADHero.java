@@ -7,14 +7,15 @@ public class ADHero extends Hero implements AD{
         System.out.println("进行物理攻击");
     }
      
-    //隐藏父类的battleWin方法
-    public static void battleWin(){
-        System.out.println("ad hero battle win");
-    }   
+    public ADHero(){
+         
+        System.out.println("AD Hero的构造方法");
+    }
      
     public static void main(String[] args) {
-        Hero.battleWin();
-        ADHero.battleWin();
+ 
+        new ADHero();
+         
     }
   
 }
