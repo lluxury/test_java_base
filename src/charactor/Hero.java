@@ -1,25 +1,24 @@
 package charactor;
  
-//Weapon类在其他包里，使用必须进行import
 import property.Weapon;
  
-/**
- * @author yann
- *
- */
 public class Hero {
-        
-    String name; //姓名
-        
-    float hp; //血量
-        
-    float armor; //护甲
-        
-    int moveSpeed; //移动速度
+ 
+    //属性id是private的，只有Hero自己可以访问
+    //子类不能继承
+    //其他类也不能访问
+    private int id;
      
-    //装备一把武器
-    public void equip(Weapon w){
-         
+    String name;
+ 
+    float hp;
+ 
+    float armor;
+ 
+    int moveSpeed;
+ 
+    public void equip(Weapon w) {
+ 
     }
-        
+ 
 }
