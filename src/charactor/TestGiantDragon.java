@@ -4,7 +4,7 @@ public class TestGiantDragon {
  
     public static void main(String[] args) {
         //通过new实例化会报错
-      GiantDragon g = new GiantDragon();
+//      GiantDragon g = new GiantDragon();
          
         //只能通过getInstance得到对象
          
