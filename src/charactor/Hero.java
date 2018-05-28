@@ -1,4 +1,8 @@
-package charactor; //在最开始的地方声明该类所处于的包名
+package charactor;
+ 
+//Weapon类在其他包里，使用必须进行import
+import property.Weapon;
+ 
 /**
  * @author yann
  *
@@ -13,4 +17,9 @@ public class Hero {
         
     int moveSpeed; //移动速度
      
+    //装备一把武器
+    public void equip(Weapon w){
+         
+    }
+        
 }
