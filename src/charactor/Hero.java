@@ -7,15 +7,15 @@ public class Hero {
  
     String name;
  
-    // 无修饰符的属性 hp
+    // protected饰符的属性 hp
     // 自己可以访问
  
     // 同包子类可以继承
-    // 不同包子类不能继承
+    // 不同包子类可以继承
  
     // 同包类可以访问
     // 不同包类不能访问
-    float hp;
+    protected float hp;
  
     float armor;
  
