@@ -1,7 +1,5 @@
 package charactor;
  
-import property.Item;
- 
 public class Hero extends Object {
         
     String name; //姓名
@@ -12,22 +10,11 @@ public class Hero extends Object {
         
     int moveSpeed; //移动速度
      
-    public final void useItem(Item i){
-        System.out.println("hero use item");
-        i.effect();
-    }   
-     
-    public Hero(){
-        System.out.println("Hero的无参的构造方法 ");
-    }
-     
-    public Hero(String name){
-        System.out.println("Hero的有一个参数的构造方法 ");
-        this.name = name;
-    }
-     
     public static void main(String[] args) {
-        new Hero();
+ 
+        final int hp;
+        hp = 5;
+//        hp = 6;
+         
     }
-      
 }
