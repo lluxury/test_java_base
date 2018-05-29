@@ -23,7 +23,7 @@ public class ADHero extends Hero implements AD {
     // 重写userItem，并在其中调用父类的userItem方法
     public void useItem(Item i) {
         System.out.println("adhero use item");
-        super.useItem(i);
+//        super.useItem(i);
     }
  
     public static void main(String[] args) {

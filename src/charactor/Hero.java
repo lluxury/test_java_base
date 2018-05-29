@@ -1,6 +1,8 @@
 package charactor;
  
 public class Hero extends Object {
+     
+    public static final int itemTotalNumber = 6;//物品栏的数量
         
     String name; //姓名
         
@@ -14,7 +16,6 @@ public class Hero extends Object {
  
         final Hero h;
         h  =new Hero();
-//        h  =new Hero();
          
         h.hp = 5;
          
