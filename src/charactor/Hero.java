@@ -1,28 +1,20 @@
 package charactor;
    
 public abstract class Hero {
-    String name; //姓名
-          
-    float hp; //血量
-          
-    float armor; //护甲
-          
-    int moveSpeed; //移动速度
-      
+ 
     public abstract void attack();
       
     public static void main(String[] args) {
-          
-        //与匿名类的区别在于，本地类有了自定义的类名
-        class SomeHero extends Hero{
-            public void attack() {
-                System.out.println( name+ " 新的进攻手段");
-            }
-        }
+ 
+        //在匿名类中使用外部的局部变量，外部的局部变量必须修饰为final
+        final int damage = 5;
          
-        SomeHero h  =new SomeHero();
-        h.name ="地卜师";
-        h.attack();
+        Hero h = new Hero(){
+            public void attack() {
+                System.out.printf("新的进攻手段，造成%d点伤害",damage );
+            }
+        };
+ 
     }
       
 }
