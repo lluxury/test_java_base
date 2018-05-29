@@ -3,8 +3,7 @@ package charactor;
 public class Hero {
     public String name;
     protected float hp;
-    
-    @Override
+      
     public boolean equals(Object o){
         if(o instanceof Hero){
             Hero h = (Hero) o;
@@ -21,7 +20,8 @@ public class Hero {
         Hero h3= new Hero();
         h3.hp = 300;
          
-        System.out.println(h1.equals(h2));
-        System.out.println(h1.equals(h3));
+        System.out.println(h1==h2);
+        System.out.println(h1==h3);
+         
     }
 }
