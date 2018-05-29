@@ -13,22 +13,16 @@ public abstract class Hero {
       
     public static void main(String[] args) {
           
-        ADHero adh=new ADHero();
-        //通过打印adh，可以看到adh这个对象属于ADHero类
-        adh.attack();
-        System.out.println(adh);
-          
-        Hero h = new Hero(){
-            //当场实现attack方法
-        	@Override
+        //与匿名类的区别在于，本地类有了自定义的类名
+        class SomeHero extends Hero{
             public void attack() {
-                System.out.println("新的进攻手段");
+                System.out.println( name+ " 新的进攻手段");
             }
-        };
+        }
+         
+        SomeHero h  =new SomeHero();
+        h.name ="地卜师";
         h.attack();
-        //通过打印h，可以看到h这个对象属于Hero$1这么一个系统自动分配的类名
-          
-        System.out.println(h);
     }
       
 }
