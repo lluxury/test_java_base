@@ -1,32 +1,34 @@
 package charactor;
-  
-public class Hero {
-    public String name;
-    protected float hp;
-  
-    private static void battleWin(){
-        System.out.println("battle win");
-    }
-     
-    //敌方的水晶
-    static class EnemyCrystal{
-        int hp=5000;
-         
-        //如果水晶的血量为0，则宣布胜利
-        public void checkIfVictory(){
-            if(hp==0){
-                Hero.battleWin();
-                 
-                //静态内部类不能直接访问外部类的对象属性
-//                System.out.println(name + " win this game");
-            }
-        }
-    }
-     
+   
+public abstract class Hero {
+    String name; //姓名
+          
+    float hp; //血量
+          
+    float armor; //护甲
+          
+    int moveSpeed; //移动速度
+      
+    public abstract void attack();
+      
     public static void main(String[] args) {
-        //实例化静态内部类
-        Hero.EnemyCrystal crystal = new Hero.EnemyCrystal();
-        crystal.checkIfVictory();
+          
+        ADHero adh=new ADHero();
+        //通过打印adh，可以看到adh这个对象属于ADHero类
+        adh.attack();
+        System.out.println(adh);
+          
+        Hero h = new Hero(){
+            //当场实现attack方法
+        	@Override
+            public void attack() {
+                System.out.println("新的进攻手段");
+            }
+        };
+        h.attack();
+        //通过打印h，可以看到h这个对象属于Hero$1这么一个系统自动分配的类名
+          
+        System.out.println(h);
     }
-  
+      
 }
