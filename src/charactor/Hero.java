@@ -2,7 +2,7 @@ package charactor;
  
 import property.Item;
  
-public class Hero {
+public class Hero extends Object {
         
     String name; //姓名
         
@@ -27,7 +27,7 @@ public class Hero {
     }
      
     public static void main(String[] args) {
-        new Hero("x");
+        new Hero();
     }
       
 }
