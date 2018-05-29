@@ -12,9 +12,12 @@ public class Hero extends Object {
      
     public static void main(String[] args) {
  
-        final int hp;
-        hp = 5;
-//        hp = 6;
+        final Hero h;
+        h  =new Hero();
+//        h  =new Hero();
+         
+        h.hp = 5;
          
     }
+      
 }
