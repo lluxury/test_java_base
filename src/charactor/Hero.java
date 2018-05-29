@@ -1,24 +1,27 @@
 package charactor;
  
-public class Hero extends Object {
-     
-    public static final int itemTotalNumber = 6;//物品栏的数量
-        
-    String name; //姓名
-        
-    float hp; //血量
-        
-    float armor; //护甲
-        
-    int moveSpeed; //移动速度
-     
+/**
+ * @author yann
+ *
+ */
+public abstract class Hero {
+    String name;
+ 
+    float hp;
+ 
+    float armor;
+ 
+    int moveSpeed;
+ 
     public static void main(String[] args) {
  
-        final Hero h;
-        h  =new Hero();
-         
-        h.hp = 5;
-         
     }
-      
+ 
+    // 抽象方法attack
+    // Hero的子类会被要求实现attack方法
+    /**
+     * attack a da da da
+     */
+    public abstract void attack();
+ 
 }
