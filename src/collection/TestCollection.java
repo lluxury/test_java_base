@@ -14,10 +14,14 @@ public class TestCollection {
         }
         Hero specialHero = new Hero("special hero");
         heros.add(specialHero);
- 
+         
         System.out.println(heros);
-        System.out.println("specialHero所处的位置:"+heros.indexOf(specialHero));
-        System.out.println("新的英雄，但是名字是\"hero 1\"所处的位置:"+heros.indexOf(new Hero("hero 1")));
- 
+        heros.remove(2);
+        System.out.println("删除下标是2的对象");
+        System.out.println(heros);
+        System.out.println("删除special hero");
+        heros.remove(specialHero);
+        System.out.println(heros);
+         
     }
 }
