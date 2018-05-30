@@ -16,9 +16,9 @@ public class TestCollection {
         System.out.println("集合中的数据:");
         System.out.println(numbers);
          
-        Collections.reverse(numbers);
+        Collections.shuffle(numbers);
          
-        System.out.println("翻转后集合中的数据:");
+        System.out.println("混淆后集合中的数据:");
         System.out.println(numbers);
          
     }
