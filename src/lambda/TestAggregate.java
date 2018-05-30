@@ -32,15 +32,15 @@ public class TestAggregate {
         System.out.println("通过传统方式找出来的hp第三高的英雄名称是:" + hero.name);
          
         //聚合方式
-        String name =heros
-            .stream()
-            .sorted((h1,h2)->h1.hp>h2.hp?-1:1)
-            .skip(2)
-            .map(h->h.getName())
-            .findFirst()
-            .get();
+//        String name =heros
+//            .stream()
+//            .sorted((h1,h2)->h1.hp>h2.hp?-1:1)
+//            .skip(2)
+//            .map(h->h.getName())
+//            .findFirst()
+//            .get();
  
-        System.out.println("通过聚合操作找出来的hp第三高的英雄名称是:" + name);
+//        System.out.println("通过聚合操作找出来的hp第三高的英雄名称是:" + name);
          
     }
 }
