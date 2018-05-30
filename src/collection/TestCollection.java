@@ -16,12 +16,8 @@ public class TestCollection {
         System.out.println("集合中的数据:");
         System.out.println(numbers);
  
-        Collections.shuffle(numbers);
-        System.out.println("混淆后集合中的数据:");
-        System.out.println(numbers);
- 
-        Collections.sort(numbers);
-        System.out.println("排序后集合中的数据:");
+        Collections.swap(numbers,0,5);
+        System.out.println("交换0和5下标的数据后，集合中的数据:");
         System.out.println(numbers);
          
     }
