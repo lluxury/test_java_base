@@ -5,18 +5,22 @@ import java.util.ArrayList;
 import charactor.Hero;
  
 public class TestCollection {
-    @SuppressWarnings("rawtypes")
     public static void main(String[] args) {
-        //容器类ArrayList，用于存放对象
         ArrayList heros = new ArrayList();
-        heros.add( new Hero("盖伦"));
-        System.out.println(heros.size());
-         
-        //容器的容量"capacity"会随着对象的增加，自动增长
-        //只需要不断往容器里增加英雄即可，不用担心会出现数组的边界问题。
-        heros.add( new Hero("提莫"));
-        System.out.println(heros.size());
-         
+ 
+        // 把5个对象加入到ArrayList中
+        for (int i = 0; i < 5; i++) {
+            heros.add(new Hero("hero " + i));
+            
+        }
+        System.out.println(heros);
+        System.out.println(heros.toString());
+        // 在指定位置增加对象
+        Hero specialHero = new Hero("special hero");
+        heros.add(3, specialHero);
+ 
+        System.out.println(heros.toString());
+//        System.out.println(heros());
     }
-     
+ 
 }
