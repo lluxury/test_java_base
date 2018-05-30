@@ -14,12 +14,10 @@ public class TestCollection {
         }
         Hero specialHero = new Hero("special hero");
         heros.add(specialHero);
-         
-        //获取指定位置的对象
-        System.out.println(heros.get(5));
-        //如果超出了范围，依然会报错
-//        System.out.println(heros.get(6));
+ 
+        System.out.println(heros);
+        System.out.println("specialHero所处的位置:"+heros.indexOf(specialHero));
+        System.out.println("新的英雄，但是名字是\"hero 1\"所处的位置:"+heros.indexOf(new Hero("hero 1")));
  
     }
- 
 }
