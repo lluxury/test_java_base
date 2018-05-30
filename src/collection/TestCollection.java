@@ -1,27 +1,29 @@
 package collection;
-   
+ 
 import java.util.ArrayList;
-import java.util.HashSet;
-    
+import java.util.LinkedList;
+import java.util.List;
+ 
 public class TestCollection {
     public static void main(String[] args) {
-           
-        ArrayList<Integer> numberList =new ArrayList<Integer>();
-        //List中的数据可以重复
-        System.out.println("----------List----------");
-        System.out.println("向List 中插入 9 9");
-        numberList.add(9);
-        numberList.add(9);
-        System.out.println("List 中出现两个9:");
-        System.out.println(numberList);
-        System.out.println("----------Set----------");
-        HashSet<Integer> numberSet =new HashSet<Integer>();
-        System.out.println("向Set 中插入9 9");
-        //Set中的数据不能重复
-        numberSet.add(9);
-        numberSet.add(9);
-        System.out.println("Set 中只会保留一个9:");
-        System.out.println(numberSet);
-           
+        List<Integer> l;
+        l = new ArrayList<>();
+        insertFirst(l, "ArrayList");
+ 
+        l = new LinkedList<>();
+        insertFirst(l, "LinkedList");
+ 
     }
+ 
+    private static void insertFirst(List<Integer> l, String type) {
+        int total = 1000 * 100;
+        final int number = 5;
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < total; i++) {
+            l.add(0, number);
+        }
+        long end = System.currentTimeMillis();
+        System.out.printf("在%s 最前面插入%d条数据，总共耗时 %d 毫秒 %n", type, total, end - start);
+    }
+ 
 }
