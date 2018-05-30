@@ -1,22 +1,23 @@
 package collection;
- 
+  
 import java.util.ArrayList;
+import java.util.List;
  
 import charactor.Hero;
- 
+  
 public class TestCollection {
+ 
     public static void main(String[] args) {
-        ArrayList heros = new ArrayList();
- 
-        // 初始化5个对象
-        for (int i = 0; i < 5; i++) {
-            heros.add(new Hero("hero " + i));
-        }
- 
-        System.out.println("ArrayList heros:\t" + heros);
-        System.out.println("使用clear清空");
-        heros.clear();
-        System.out.println("ArrayList heros:\t" + heros);
-          
+        //ArrayList实现了接口List
+         
+        //常见的写法会把引用声明为接口List类型
+        //注意：是java.util.List,而不是java.awt.List
+        //接口引用指向子类对象（多态）
+         
+        List heros = new ArrayList();
+        heros.add( new Hero("盖伦"));
+        System.out.println(heros.size());
+         
     }
+      
 }
