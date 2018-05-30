@@ -16,12 +16,8 @@ public class TestCollection {
         heros.add(specialHero);
          
         System.out.println(heros);
-        heros.remove(2);
-        System.out.println("删除下标是2的对象");
+        System.out.println("把下标是5的元素，替换为\"hero 5\"");
+        heros.set(5, new Hero("hero 5"));
         System.out.println(heros);
-        System.out.println("删除special hero");
-        heros.remove(specialHero);
-        System.out.println(heros);
-         
     }
 }
