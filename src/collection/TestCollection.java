@@ -1,23 +1,33 @@
 package collection;
- 
-import java.util.HashMap;
-import java.util.Hashtable;
- 
+  
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
+  
 public class TestCollection {
     public static void main(String[] args) {
-         
-        //HashMap和Hashtable都实现了Map接口，都是键值对保存数据的方式
-         
-        HashMap<String,String> hashMap = new HashMap<String,String>();
-         
-        //HashMap可以用null作key,作value
-        hashMap.put(null, "123");
-        hashMap.put("123", null);
-         
-        Hashtable<String,String> hashtable = new Hashtable<String,String>();
-        //Hashtable不能用null作key，不能用null作value
-//        hashtable.put(null, "123");
-//        hashtable.put("123", null);
- 
+        HashSet<Integer> numberSet1 =new HashSet<Integer>();
+        //HashSet中的数据不是按照插入顺序存放
+        numberSet1.add(88);
+        numberSet1.add(8);
+        numberSet1.add(888);
+          
+        System.out.println(numberSet1);
+          
+        LinkedHashSet<Integer> numberSet2 =new LinkedHashSet<Integer>();
+        //LinkedHashSet中的数据是按照插入顺序存放
+        numberSet2.add(88);
+        numberSet2.add(8);
+        numberSet2.add(888);
+          
+        System.out.println(numberSet2);
+        TreeSet<Integer> numberSet3 =new TreeSet<Integer>();
+        //TreeSet 中的数据是进行了排序的
+        numberSet3.add(88);
+        numberSet3.add(8);
+        numberSet3.add(888);
+          
+        System.out.println(numberSet3);
+          
     }
 }
