@@ -1,30 +1,42 @@
 package collection;
-  
-import java.util.HashMap;
-  
+     
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
+    
 import charactor.Hero;
-  
+     
 public class TestCollection {
     public static void main(String[] args) {
-          
-        HashMap<String,Hero> heroMap = new HashMap<String,Hero>();
-        for (int j = 0; j < 2000000; j++) {
-            Hero h = new Hero("Hero " + j);
-            heroMap.put(h.name, h);
-        }
-        System.out.println("数据准备完成");
-  
+        Random r =new Random();
+        List<Hero> heros = new ArrayList<Hero>();
+            
         for (int i = 0; i < 10; i++) {
-            long start = System.currentTimeMillis();
-              
-            //查找名字是Hero 1000000的对象
-            Hero target = heroMap.get("Hero 1000000");
-            System.out.println("找到了 hero!" + target.name);
-              
-            long end = System.currentTimeMillis();
-            long elapsed = end - start;
-            System.out.println("一共花了：" + elapsed + " 毫秒");
+            //通过随机值实例化hero的hp和damage
+            heros.add(new Hero("hero "+ i, r.nextInt(100), r.nextInt(100)));
         }
-  
+        System.out.println("初始化后的集合：");
+        System.out.println(heros);
+            
+        //直接调用sort会出现编译错误，因为Hero有各种属性
+        //到底按照哪种属性进行比较，Collections也不知道，不确定，所以没法排
+        //Collections.sort(heros);
+            
+        //引入Comparator，指定比较的算法
+        Comparator<Hero> c = new Comparator<Hero>() {
+            @Override
+            public int compare(Hero h1, Hero h2) {
+                //按照hp进行排序
+                if(h1.hp>=h2.hp)
+                    return 1;  //正数表示h1比h2要大
+                else
+                    return -1;
+            }
+        };
+        Collections.sort(heros,c);
+        System.out.println("按照血量排序后的集合：");
+        System.out.println(heros);
     }
 }
