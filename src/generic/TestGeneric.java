@@ -2,21 +2,23 @@ package generic;
  
 import java.util.ArrayList;
  
+import property.Item;
+ 
+import charactor.ADHero;
 import charactor.APHero;
+import charactor.Hero;
  
 public class TestGeneric {
  
     public static void main(String[] args) {
-        ArrayList<APHero> heros = new ArrayList<APHero>();
+        ArrayList<Hero> heros = new ArrayList<Hero>();
          
-        //只有APHero可以放进去    
+        //只有作为Hero的子类可以放进去     
         heros.add(new APHero());
+        heros.add(new ADHero());
          
-        //ADHero甚至放不进去
-        //heros.add(new ADHero());
-         
-        //获取的时候也不需要进行转型，因为取出来一定是APHero
-        APHero apHero =  heros.get(0);
+        //和Hero无关的类型Item还是放不进去
+        heros.add(new Item());
          
     }
 }
