@@ -3,35 +3,35 @@ package collection;
 import java.util.ArrayList;
 import java.util.List;
  
-public class Node {
+public class Node<T> {
     // 左子节点
-    public Node leftNode;
+    public Node<T> leftNode;
     // 右子节点
-    public Node rightNode;
+    public Node<T> rightNode;
   
     // 值
-    public Object value;
+    public T value;
   
     // 插入 数据
-    public void add(Object v) {
+    public void add(T t) {
         // 如果当前节点没有值，就把数据放在当前节点上
         if (null == value)
-            value = v;
+            value = t;
   
         // 如果当前节点有值，就进行判断，新增的值与当前值的大小关系
         else {
             // 新增的值，比当前值小或者相同
              
-            if ((Integer) v -((Integer)value) <= 0) {
+            if ((Integer) t -((Integer)value) <= 0) {
                 if (null == leftNode)
-                    leftNode = new Node();
-                leftNode.add(v);
+                    leftNode = new Node<T>();
+                leftNode.add(t);
             }
             // 新增的值，比当前值大
             else {
                 if (null == rightNode)
-                    rightNode = new Node();
-                rightNode.add(v);
+                    rightNode = new Node<T>();
+                rightNode.add(t);
             }
   
         }
@@ -39,8 +39,8 @@ public class Node {
     }
   
  // 中序遍历所有的节点
-    public List<Object> values() {
-        List<Object> values = new ArrayList<>();
+    public List<T> values() {
+        List<T> values = new ArrayList<>();
   
         // 左节点的遍历结果
         if (null != leftNode)
@@ -61,7 +61,7 @@ public class Node {
   
         int randoms[] = new int[] { 67, 7, 30, 73, 10, 0, 78, 81, 10, 74 };
   
-        Node roots = new Node();
+        Node<Integer> roots = new Node<>();
         for (int number : randoms) {
             roots.add(number);
         }
@@ -70,4 +70,3 @@ public class Node {
   
     }
 }
-//不是很懂,需要算法理论做基础
