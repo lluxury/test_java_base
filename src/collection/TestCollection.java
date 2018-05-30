@@ -16,8 +16,8 @@ public class TestCollection {
         System.out.println("集合中的数据:");
         System.out.println(numbers);
  
-        Collections.swap(numbers,0,5);
-        System.out.println("交换0和5下标的数据后，集合中的数据:");
+        Collections.rotate(numbers,2);
+        System.out.println("把集合向右滚动2个单位，标的数据后，集合中的数据:");
         System.out.println(numbers);
          
     }
