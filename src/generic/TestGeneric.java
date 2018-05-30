@@ -2,21 +2,21 @@ package generic;
  
 import java.util.ArrayList;
  
-import charactor.ADHero;
 import charactor.APHero;
  
 public class TestGeneric {
  
     public static void main(String[] args) {
+        ArrayList<APHero> heros = new ArrayList<APHero>();
          
-        ArrayList heros = new ArrayList();
-         
+        //只有APHero可以放进去    
         heros.add(new APHero());
-        heros.add(new ADHero());
          
-        APHero apHero =  (APHero) heros.get(0);
-        ADHero adHero =  (ADHero) heros.get(1);
+        //ADHero甚至放不进去
+        //heros.add(new ADHero());
          
-//        ADHero adHero2 =  (ADHero) heros.get(0);
+        //获取的时候也不需要进行转型，因为取出来一定是APHero
+        APHero apHero =  heros.get(0);
+         
     }
 }
