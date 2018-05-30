@@ -14,10 +14,8 @@ public class TestCollection {
         }
         Hero specialHero = new Hero("special hero");
         heros.add(specialHero);
-         
         System.out.println(heros);
-        System.out.println("把下标是5的元素，替换为\"hero 5\"");
-        heros.set(5, new Hero("hero 5"));
-        System.out.println(heros);
+        System.out.println("获取ArrayList的大小：");
+        System.out.println(heros.size());
     }
 }
