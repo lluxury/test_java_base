@@ -7,7 +7,10 @@ public class Hero{
     public int damage;
      
     //回血
-    public void recover(){
+    //直接在方法前加上修饰符synchronized
+    //其所对应的同步对象，就是this
+    //和hurt方法达到的效果一样
+    public synchronized void recover(){
         hp=hp+1;
     }
      

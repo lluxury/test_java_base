@@ -21,10 +21,8 @@ public class TestThread {
             Thread t = new Thread(){
                 public void run(){
                      
-                    //使用gareen作为synchronized
-                    synchronized (gareen) {
-                        gareen.recover();
-                    }
+                    //recover自带synchronized
+                    gareen.recover();
                      
                     try {
                         Thread.sleep(100);
@@ -42,8 +40,7 @@ public class TestThread {
         for (int i = 0; i < n; i++) {
             Thread t = new Thread(){
                 public void run(){
-                    //使用gareen作为synchronized
-                    //在方法hurt中有synchronized(this)
+                    //hurt自带synchronized
                     gareen.hurt();
                      
                     try {
