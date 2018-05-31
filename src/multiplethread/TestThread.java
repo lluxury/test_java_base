@@ -2,6 +2,7 @@ package multiplethread;
  
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
  
@@ -20,21 +21,29 @@ public class TestThread {
  
         Thread t1 = new Thread() {
             public void run() {
+                boolean locked = false;
                 try {
                     log("线程启动");
                     log("试图占有对象：lock");
  
-                    lock.lock();
- 
-                    log("占有对象：lock");
-                    log("进行5秒的业务操作");
-                    Thread.sleep(5000);
+                    locked = lock.tryLock(1,TimeUnit.SECONDS);
+                    if(locked){
+                        log("占有对象：lock");
+                        log("进行5秒的业务操作");
+                        Thread.sleep(5000);
+                    }
+                    else{
+                        log("经过1秒钟的努力，还没有占有对象，放弃占有");
+                    }
  
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    log("释放对象：lock");
-                    lock.unlock();
+                     
+                    if(locked){
+                        log("释放对象：lock");
+                        lock.unlock();
+                    }
                 }
                 log("线程结束");
             }
@@ -51,21 +60,29 @@ public class TestThread {
         Thread t2 = new Thread() {
  
             public void run() {
+                boolean locked = false;
                 try {
                     log("线程启动");
                     log("试图占有对象：lock");
  
-                    lock.lock();
- 
-                    log("占有对象：lock");
-                    log("进行5秒的业务操作");
-                    Thread.sleep(5000);
+                    locked = lock.tryLock(1,TimeUnit.SECONDS);
+                    if(locked){
+                        log("占有对象：lock");
+                        log("进行5秒的业务操作");
+                        Thread.sleep(5000);
+                    }
+                    else{
+                        log("经过1秒钟的努力，还没有占有对象，放弃占有");
+                    }
  
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    log("释放对象：lock");
-                    lock.unlock();
+                     
+                    if(locked){
+                        log("释放对象：lock");
+                        lock.unlock();
+                    }
                 }
                 log("线程结束");
             }
