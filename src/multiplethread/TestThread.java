@@ -1,79 +1,61 @@
 package multiplethread;
    
-import java.awt.GradientPaint;
- 
 import charactor.Hero;
-   
+    
 public class TestThread {
-   
+      
     public static void main(String[] args) {
- 
-        final Hero gareen = new Hero();
-        gareen.name = "盖伦";
-        gareen.hp = 10000;
-          
-        int n = 10000;
-  
-        Thread[] addThreads = new Thread[n];
-        Thread[] reduceThreads = new Thread[n];
-          
-        for (int i = 0; i < n; i++) {
-            Thread t = new Thread(){
-                public void run(){
-                     
-                    //recover自带synchronized
-                    gareen.recover();
-                     
+        final Hero ahri = new Hero();
+        ahri.name = "九尾妖狐";
+        final Hero annie = new Hero();
+        annie.name = "安妮";
+         
+        Thread t1 = new Thread(){
+            public void run(){
+                //占有九尾妖狐
+                synchronized (ahri) {
+                    System.out.println("t1 已占有九尾妖狐");
                     try {
-                        Thread.sleep(100);
+                        //停顿1000毫秒，另一个线程有足够的时间占有安妮
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                }
-            };
-            t.start();
-            addThreads[i] = t;
-              
-        }
-          
-        for (int i = 0; i < n; i++) {
-            Thread t = new Thread(){
-                public void run(){
-                    //hurt自带synchronized
-                    gareen.hurt();
                      
+                    System.out.println("t1 试图占有安妮");
+                    System.out.println("t1 等待中 。。。。");
+                    synchronized (annie) {
+                        System.out.println("do something");
+                    }
+                }  
+                 
+            }
+        };
+        t1.start();
+        Thread t2 = new Thread(){
+            public void run(){
+                //占有安妮
+                synchronized (annie) {
+                    System.out.println("t2 已占有安妮");
                     try {
-                        Thread.sleep(100);
+                         
+                        //停顿1000秒，另一个线程有足够的时间占有暂用九尾妖狐
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                }
-            };
-            t.start();
-            reduceThreads[i] = t;
-        }
-          
-        for (Thread t : addThreads) {
-            try {
-                t.join();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                    System.out.println("t2 试图占有九尾妖狐");
+                    System.out.println("t2 等待中 。。。。");
+                    synchronized (ahri) {
+                        System.out.println("do something");
+                    }
+                }  
+                 
             }
-        }
-        for (Thread t : reduceThreads) {
-            try {
-                t.join();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-          
-        System.out.printf("%d个增加线程和%d个减少线程结束后%n盖伦的血量是 %.0f%n", n,n,gareen.hp);
-          
-    }
-       
+        };
+        t2.start();
+   }
+        
 }
