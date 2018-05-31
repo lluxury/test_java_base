@@ -26,11 +26,13 @@ public class TestThread {
         leesin.hp = 455;
         leesin.damage = 80;
          
-        KillThread killThread1 = new KillThread(gareen,teemo);
-        killThread1.start();
-        KillThread killThread2 = new KillThread(bh,leesin);
-        killThread2.start();
+        Battle battle1 = new Battle(gareen,teemo);
          
+        new Thread(battle1).start();
+ 
+        Battle battle2 = new Battle(bh,leesin);
+        new Thread(battle2).start();
+ 
     }
      
 }
