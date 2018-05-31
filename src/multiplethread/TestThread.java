@@ -26,15 +26,11 @@ public class TestThread {
         leesin.hp = 455;
         leesin.damage = 80;
          
-        //盖伦攻击提莫
-        while(!teemo.isDead()){
-            gareen.attackHero(teemo);
-        }
- 
-        //赏金猎人攻击盲僧
-        while(!leesin.isDead()){
-            bh.attackHero(leesin);
-        }
+        KillThread killThread1 = new KillThread(gareen,teemo);
+        killThread1.start();
+        KillThread killThread2 = new KillThread(bh,leesin);
+        killThread2.start();
+         
     }
      
 }
