@@ -13,7 +13,10 @@ public class Hero{
      
     //掉血
     public void hurt(){
-        hp=hp-1;
+        //使用this作为同步对象
+        synchronized (this) {
+            hp=hp-1;   
+        }
     }
      
     public void attackHero(Hero h) {

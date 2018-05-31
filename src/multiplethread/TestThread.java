@@ -8,8 +8,6 @@ public class TestThread {
    
     public static void main(String[] args) {
  
-        final Object someObject = new Object();
-         
         final Hero gareen = new Hero();
         gareen.name = "盖伦";
         gareen.hp = 10000;
@@ -23,8 +21,8 @@ public class TestThread {
             Thread t = new Thread(){
                 public void run(){
                      
-                    //任何线程要修改hp的值，必须先占用someObject
-                    synchronized (someObject) {
+                    //使用gareen作为synchronized
+                    synchronized (gareen) {
                         gareen.recover();
                     }
                      
@@ -44,10 +42,9 @@ public class TestThread {
         for (int i = 0; i < n; i++) {
             Thread t = new Thread(){
                 public void run(){
-                    //任何线程要修改hp的值，必须先占用someObject
-                    synchronized (someObject) {
-                        gareen.hurt();
-                    }
+                    //使用gareen作为synchronized
+                    //在方法hurt中有synchronized(this)
+                    gareen.hurt();
                      
                     try {
                         Thread.sleep(100);
