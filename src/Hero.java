@@ -1,28 +1,32 @@
-public class Hero {
- 
-    String name; // 姓名
- 
-    float hp; // 血量
- 
-    float armor; // 护甲
- 
-    int moveSpeed; // 移动速度
- 
-    public Hero(String name, float hp) {
-        this.name = name;
-        this.hp = hp;
+package charactor;
+  
+import java.io.Serializable;
+   
+public class Hero{
+    public String name;
+    public float hp;
+      
+    public int damage;
+      
+    public void attackHero(Hero h) {
+        //把暂停时间去掉，多条线程各自会尽力去占有CPU资源
+        //线程的优先级效果才可以看得出来
+//        try {
+//           
+//            Thread.sleep(0);
+//        } catch (InterruptedException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
+        h.hp-=damage;
+        System.out.format("%s 正在攻击 %s, %s的血变成了 %.0f%n",name,h.name,h.name,h.hp);
+          
+        if(h.isDead())
+            System.out.println(h.name +"死了！");
     }
- 
-    // 攻击一个英雄，并让他掉damage点血
-    public void attack(Hero hero, int damage) {
-        hero.hp = hero.hp - damage;
+  
+    public boolean isDead() {
+        return 0>=hp?true:false;
     }
- 
-    public static void main(String[] args) {
-        Hero teemo = new Hero("提莫", 383);
-        Hero garen = new Hero("盖伦", 616);
-        garen.attack(teemo, 100);
-        System.out.println(teemo.hp);
-    }
- 
+  
 }
